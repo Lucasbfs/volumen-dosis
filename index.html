@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css"> 
+    <title>Volumen de dosis</title>
+</head>
+<body>
+    <form>
+        Volumen de eyaculados : <input type="text" id="firstValue" /><br>
+        Concentración : <input type="text" id="secondValue" /><br>
+        <button type="button" onClick="calculate()">Calcular número de dosis</button>
+
+        <button onClick="reloadPage();">Volver a empezar</button>
+
+    <!--Data Answer-->
+    <div>
+        <h1>Número de dosis = <span id="result1"></span> </h1>
+        <h1>Volumen total = <span id="result2"></span></h1>
+    </div>
+    
+    </form>
+
+
+    <script>
+        function calculate(){
+            var value1 = document.getElementById("firstValue").value;
+            var value2 = document.getElementById("secondValue").value;
+            var answer1 = document.getElementById("result1").innerHTML = (value1 * value2) / 25;
+            document.getElementById("result2").innerHTML = (answer1 * 0.25) - (value1);
+           
+        };
+        function reloadPage(){
+            window.location.reload();
+        };
+    </script>
+</body>
+</html> 
+
+
